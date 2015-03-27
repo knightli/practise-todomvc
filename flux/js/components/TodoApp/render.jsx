@@ -12,7 +12,7 @@ module.exports = function() {
       </header>
       <section id="main">
         <TodoToggler id="toggle-all" />
-        <TodoList id="todo-list" />
+        <TodoList id="todo-list" todolist={this.props.todolist} />
       </section>
     </div>
   );
