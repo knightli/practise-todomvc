@@ -6,7 +6,7 @@ module.exports = function() {
 
   return (
     <li>
-      <input className="toggle" type="checkbox" checked={todo.complete} onChange={this._onToggleComplete} />
+      <input className="toggle" type="checkbox" checked={this.state.complete} onChange={this._onToggleComplete} />
       <label>{todo.text}</label>
       <button className="destory"></button>
     </li>
