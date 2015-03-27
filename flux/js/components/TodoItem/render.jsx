@@ -5,7 +5,7 @@ module.exports = function() {
     <li>
       <input className="toggle" type="checkbox" />
       <label>{this.props.text}</label>
-      <button class="destory"></button>
+      <button className="destory"></button>
     </li>
   );
 }
