@@ -12,7 +12,7 @@ module.exports = function() {
     <li className={className}>
       <input className="toggle" type="checkbox" checked={todo.complete} onChange={this._onToggleComplete} />
       <label>{todo.text}</label>
-      <button className="destroy"></button>
+      <button className="destroy" onClick={this._onDestoryClick}></button>
     </li>
   );
 }

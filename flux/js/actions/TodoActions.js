@@ -9,6 +9,13 @@ var TodoActions = {
     });
   },
 
+  destroy: function(todo) {
+    TodoAppDispatcher.dispatch({
+      actionType: "TODO_DESTROY",
+      id: todo.id
+    });
+  },
+
   toggleComplete: function(todo) {
     var id = todo.id;
     if(todo.complete) {
