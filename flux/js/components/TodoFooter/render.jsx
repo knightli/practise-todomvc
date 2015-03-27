@@ -14,7 +14,7 @@ module.exports = function() {
         <span> items left</span>
       </span>
       {Block.If(completedCount,
-        <button id="clear-completed">Clear completed ({completedCount})</button>
+        <button id="clear-completed" onClick={this._onClearCompletedClick}>Clear completed ({completedCount})</button>
       )}
     </footer>
   );

@@ -16,6 +16,12 @@ var TodoActions = {
     });
   },
 
+  destroyCompleted: function() {
+    TodoAppDispatcher.dispatch({
+      actionType: "TODO_DESTROY_COMPLETED"
+    });
+  },
+
   toggleComplete: function(todo) {
     var id = todo.id;
     if(todo.complete) {

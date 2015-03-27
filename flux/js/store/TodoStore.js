@@ -39,6 +39,14 @@ function destroy(id) {
   _todos.splice(idx,1);
 }
 
+function destroyCompleted(){
+  for(var i=_todos.length-1; i>=0; i--) {
+    if(_todos[i].complete) {
+      _todos.splice(i, 1);
+    }
+  }
+}
+
 function toggleCompleteAll() {
   if(TodoStore.isAllComplete()){
     updateAll({complete: false});
@@ -84,6 +92,11 @@ TodoAppDispatcher.register(function(action) {
 
     case "TODO_DESTROY":
       destroy(action.id);
+      TodoStore.emitChange();
+      break;
+
+    case "TODO_DESTROY_COMPLETED":
+      destroyCompleted();
       TodoStore.emitChange();
       break;
 
