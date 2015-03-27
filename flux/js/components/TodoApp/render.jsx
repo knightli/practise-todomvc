@@ -1,13 +1,19 @@
 var React = require('react');
-var TodoHeader = require('../TodoHeader');
+var TodoToggler = require('../TodoToggler');
+var TodoCreator = require('../TodoCreator');
 var TodoList = require('../TodoList');
 
 module.exports = function() {
   return (
     <div>
       <h1>todos</h1>
-      <TodoHeader />
-      <TodoList />
+      <header>
+        <TodoToggler />
+        <TodoCreator />
+      </header>
+      <section>
+        <TodoList />
+      </section>
     </div>
   );
 }
