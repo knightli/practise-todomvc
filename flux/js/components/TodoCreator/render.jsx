@@ -4,6 +4,6 @@ var React = require('react');
 
 module.exports = function() {
   return (
-    <input id="new-todo" placeholder="What needs to be done?" />
+    <input id={this.props.id} placeholder="What needs to be done?" />
   );
 }

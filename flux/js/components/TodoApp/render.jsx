@@ -8,11 +8,11 @@ module.exports = function() {
     <div>
       <h1>todos</h1>
       <header>
-        <TodoToggler />
-        <TodoCreator />
+        <TodoCreator id="new-todo" />
       </header>
-      <section>
-        <TodoList />
+      <section id="main">
+        <TodoToggler id="toggle-all" />
+        <TodoList id="todo-list" />
       </section>
     </div>
   );

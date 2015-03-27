@@ -4,7 +4,7 @@ var React = require('react');
 
 module.exports = function() {
   return (
-    <ul id="todo-list">
+    <ul id={this.props.id}>
       <li>todo list item 1</li>
       <li>todo list item 2</li>
       <li>todo list item 3</li>

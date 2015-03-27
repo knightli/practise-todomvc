@@ -4,6 +4,6 @@ var React = require('react');
 
 module.exports = function() {
   return (
-    <input id="toggle-all" type="checkbox" />
+    <input id={this.props.id} type="checkbox" />
   );
 }
