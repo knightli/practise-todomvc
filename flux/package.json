@@ -1,0 +1,11 @@
+{
+  "name": "practise-todomvc-flux",
+  "version": "0.1.0",
+  "description": "practise todomvc with react/flux",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "MIT"
+}
