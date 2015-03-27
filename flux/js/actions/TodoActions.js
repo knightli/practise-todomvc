@@ -2,6 +2,13 @@ var TodoAppDispatcher = require('../dispatcher/TodoAppDispatcher');
 
 var TodoActions = {
 
+  create: function(text) {
+    TodoAppDispatcher.dispatch({
+      actionType: "TODO_CREATE",
+      text: text
+    });
+  },
+
   toggleComplete: function(todo) {
     var id = todo.id;
     if(todo.complete) {

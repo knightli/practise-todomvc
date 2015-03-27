@@ -1,3 +1,5 @@
+var TodoActions = require('../../actions/TodoActions');
+
 var ENTER_KEY_CODE = 13;
 
 module.exports = {
@@ -13,7 +15,7 @@ module.exports = {
       var value = this.state.value;
       value = value.trim();
       if(value) {
-        console.log('todo: use action to create a new todo item with text '+value);
+        TodoActions.create(value);
       }
       this.setState({value:''});
     }

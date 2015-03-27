@@ -19,6 +19,15 @@ function update(id, newState) {
   _todos[idx] = assign({}, _todos[idx], newState);
 }
 
+function create(text){
+  var id = (+new Date() + Math.floor(Math.random() * 999999).toString(36));
+  _todos.push({
+    id: id,
+    text: text,
+    complete: false
+  });
+}
+
 var TodoStore = assign({}, EventEmitter.prototype, {
   init: function(todos) {
     _todos = todos;
@@ -41,6 +50,11 @@ TodoAppDispatcher.register(function(action) {
   var text;
 
   switch(action.actionType) {
+
+    case "TODO_CREATE":
+      create(action.text);
+      TodoStore.emitChange();
+      break;
 
     case "TODO_UNDO_COMPLETE":
       update(action.id, {complete: false});
