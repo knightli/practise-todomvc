@@ -23,7 +23,14 @@ var TodoActions = {
         id: id
       });
     }
+  },
+
+  toggleCompleteAll: function() {
+    TodoAppDispatcher.dispatch({
+      actionType: "TODO_TOGGLE_COMPLETE_ALL"
+    });
   }
+
 };
 
 module.exports = TodoActions;

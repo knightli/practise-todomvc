@@ -19,6 +19,12 @@ function update(id, newState) {
   _todos[idx] = assign({}, _todos[idx], newState);
 }
 
+function updateAll(newState) {
+  for(var i=0,len=_todos.length; i<len; i++) {
+    _todos[i] = assign({}, _todos[i], newState);
+  }
+}
+
 function create(text){
   var id = (+new Date() + Math.floor(Math.random() * 999999).toString(36));
   _todos.push({
@@ -28,12 +34,27 @@ function create(text){
   });
 }
 
+function toggleCompleteAll() {
+  if(TodoStore.isAllComplete()){
+    updateAll({complete: false});
+  }
+  else{
+    updateAll({complete: true});
+  }
+}
+
 var TodoStore = assign({}, EventEmitter.prototype, {
   init: function(todos) {
     _todos = todos;
   },
   getAll: function(){
     return _todos;
+  },
+  isAllComplete: function(){
+    for(var i=0,len=_todos.length; i<len; i++) {
+      if(!_todos[i].complete) return false;
+    }
+    return true;
   },
   emitChange: function(){
     this.emit(CHANGE_EVENT);
@@ -63,6 +84,11 @@ TodoAppDispatcher.register(function(action) {
 
     case "TODO_COMPLETE":
       update(action.id, {complete: true});
+      TodoStore.emitChange();
+      break;
+
+    case "TODO_TOGGLE_COMPLETE_ALL":
+      toggleCompleteAll();
       TodoStore.emitChange();
       break;
 
