@@ -5,7 +5,7 @@ module.exports = function() {
   return (
     <ul id={this.props.id}>
       {this.props.todolist.map(function(item) {
-        return <TodoItem key={item.id} text={item.text} complete={item.complete} />
+        return <TodoItem key={item.id} todo={item} />
       })}
     </ul>
   );

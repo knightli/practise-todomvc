@@ -11,7 +11,7 @@ var todolist = [
   {
     id: 10002,
     text: 'todo list data item 2',
-    complete: false
+    complete: true
   },
   {
     id: 10003,
